@@ -1,5 +1,8 @@
 # Aliases:
 
+# Silence which's errors:
+alias which='which 2>/dev/null'
+
 alias ll='ls -l --color=auto'
 
 # Check for ack-grep (ack):

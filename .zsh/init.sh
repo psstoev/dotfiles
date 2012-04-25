@@ -1,3 +1,6 @@
+# Custom aliases:
+source ${HOME}/.zsh/aliases.sh
+
 # Load zshuery stuff:
 source ${HOME}/.zsh/zshuery/zshuery.sh
 load_defaults
@@ -7,9 +10,6 @@ load_completion ${HOME}/.zsh/zshuery/completion
 
 # I had to set it again, beacause of some strange bug in Ubuntu
 setopt autocd beep
-
-# Custom aliases:
-source ${HOME}/.zsh/aliases.sh
 
 # Custom environment variables:
 source ${HOME}/.zsh/variables.sh
