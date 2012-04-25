@@ -8,16 +8,14 @@ load_completion ${HOME}/.zsh/zshuery/completion
 # I had to set it again, beacause of some strange bug in Ubuntu
 setopt autocd beep
 
-# Aliases:
-alias ll='ls -l --color=auto'
-# Check for ack-grep (ack):
-which ack-grep 2>/dev/null >/dev/null
-if [[ $? -eq 0 ]]; then
-    alias ack='ack-grep'
-fi
+# Custom aliases:
+source ${HOME}/.zsh/aliases.sh
+
+# Custom environment variables:
+source ${HOME}/.zsh/variables.sh
+
+# Customized functions:
+source ${HOME}/.zsh/functions.sh
 
 # Custom functions:
 source ${HOME}/.zsh/custom/git.sh
-
-# Check for git repo when zsh starts:
-git_branch
