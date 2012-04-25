@@ -1,0 +1,27 @@
+! Stolen zenburn theme from here: http://snk.tuxfamily.org/log/zenburn-terminal-color-scheme.html
+URxvt*color0         : #000d18
+URxvt*color1         : #e89393
+URxvt*color2         : #9ece9e
+URxvt*color3         : #f0dfaf
+URxvt*color4         : #8cd0d3
+URxvt*color5         : #c0bed1
+URxvt*color6         : #dfaf8f
+URxvt*color7         : #efefef
+URxvt*color8         : #000d18
+URxvt*color9         : #e89393
+URxvt*color10        : #9ece9e
+URxvt*color11        : #f0dfaf
+URxvt*color12        : #8cd0d3
+URxvt*color13        : #c0bed1
+URxvt*color14        : #dfaf8f
+URxvt*color15        : #efefef
+URxvt*colorBD        : #ffcfaf
+URxvt*colorIT        : #90d4aa
+URxvt*colorUL        : #ccdc90
+URxvt*foreground     : #dcdccc
+URxvt*background     : #1f1f1f
+URxvt*cursorColor    : #8faf9f
+
+URxvt*termName: rxvt-unicode-256color
+URxvt*scrollBar: false
+URxvt*font:       xft:ubuntu mono:pixelsize=18:antialias=true:hinting=true:medium

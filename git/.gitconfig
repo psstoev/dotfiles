@@ -1,0 +1,18 @@
+[user]
+	name = Plamen Stoev
+	email = psstoev@gmail.com
+
+[color]
+	ui = auto
+
+[alias]
+	ca = commit -a
+	ci = commit
+	co = checkout
+	di = diff
+	dc = diff --cached
+	pr = pull --rebase
+	st = status
+
+[merge]
+	tool = vimdiff
