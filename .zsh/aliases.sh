@@ -10,3 +10,6 @@ which ack-grep 2>/dev/null >/dev/null
 if [[ $? -eq 0 ]]; then
     alias ack='ack-grep'
 fi
+
+# Emacs client:
+alias emacsclient='/opt/gnu/bin/emacsclient -c -a "" -q'

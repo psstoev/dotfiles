@@ -1,6 +1,6 @@
 # Custom environment variables:
 
-export EDITOR=${HOME}/.emacs.d/run-emacs.sh
+export EDITOR=emacsclient
 
 # PATH stuff:
 export PATH=$PATH:/opt/gnu/bin # Emacs
