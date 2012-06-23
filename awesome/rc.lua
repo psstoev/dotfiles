@@ -14,6 +14,11 @@ require("debian.menu")
 -- Themes define colours, icons, and wallpapers
 beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 
+-- Load the pomodoro widget:
+local pomodoro = require("pomodoro")
+pomodoro.pre_text = ""
+pomodoro.init()
+
 -- This is used later as the default terminal and editor to run.
 terminal = "x-terminal-emulator"
 editor = os.getenv("EDITOR") or "editor"
@@ -148,6 +153,7 @@ for s = 1, screen.count() do
             layout = awful.widget.layout.horizontal.leftright
         },
         mylayoutbox[s],
+        pomodoro.widget, pomodoro.icon_widget,
         mytextclock,
         s == 1 and mysystray or nil,
         mytasklist[s],
