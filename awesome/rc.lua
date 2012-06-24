@@ -12,7 +12,8 @@ require("debian.menu")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
+-- beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
+beautiful.init(awful.util.getdir("config") .. "/themes/solarized/dark/theme.lua")
 
 -- Load the pomodoro widget:
 local pomodoro = require("pomodoro")
