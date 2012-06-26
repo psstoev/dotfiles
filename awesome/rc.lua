@@ -87,7 +87,7 @@ pomodoro.init()
 
 -- Separator:
 separator = widget({type = "textbox"})
-separator.text = "║"
+separator.text = " ║ "
 
 -- Battery monitor:
 batwidget = widget({ type = "textbox" })
@@ -95,7 +95,7 @@ vicious.register(batwidget, vicious.widgets.bat, "ϟ $1$2%", 120, 'BAT1')
 
 -- Weather:
 weatherwidget = widget({ type = "textbox" })
-vicious.register(weatherwidget, vicious.widgets.weather, "Sofia - ${tempc}°", 1200, 'LBSF')
+vicious.register(weatherwidget, vicious.widgets.weather, "Sofia: ${tempc}°", 1200, 'LBSF')
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -167,18 +167,18 @@ for s = 1, screen.count() do
             mypromptbox[s],
             layout = awful.widget.layout.horizontal.leftright
         },
-        mylayoutbox[s],
-        pomodoro.widget, pomodoro.icon_widget,
-        s == 1 and mysystray or nil,
-        separator,
         mytextclock,
         separator,
         batwidget,
         separator,
         weatherwidget,
+        separator,
+        pomodoro.widget, pomodoro.icon_widget,
+        s == 1 and mysystray or nil,
         layout = awful.widget.layout.horizontal.rightleft
     }
     mywibox2[s].widgets = {
+        mylayoutbox[s],
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
