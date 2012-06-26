@@ -99,6 +99,7 @@ vicious.register(weatherwidget, vicious.widgets.weather, "Sofia - ${tempc}°", 1
 
 -- Create a wibox for each screen and add it
 mywibox = {}
+mywibox2 = {}
 mypromptbox = {}
 mylayoutbox = {}
 mytaglist = {}
@@ -157,6 +158,7 @@ for s = 1, screen.count() do
 
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "top", screen = s })
+    mywibox2[s] = awful.wibox({ position = "bottom", screen = s })
     -- Add widgets to the wibox - order matters
     mywibox[s].widgets = {
         {
@@ -174,7 +176,9 @@ for s = 1, screen.count() do
         batwidget,
         separator,
         weatherwidget,
-        separator,
+        layout = awful.widget.layout.horizontal.rightleft
+    }
+    mywibox2[s].widgets = {
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
