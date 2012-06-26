@@ -7,17 +7,14 @@ require("beautiful")
 -- Notification library
 require("naughty")
 
+require("vicious")
+
 -- Load Debian menu entries
 require("debian.menu")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
-
--- Load the pomodoro widget:
-local pomodoro = require("pomodoro")
-pomodoro.pre_text = ""
-pomodoro.init()
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
@@ -82,6 +79,23 @@ mytextclock = awful.widget.textclock({ align = "right" })
 
 -- Create a systray
 mysystray = widget({ type = "systray" })
+
+-- Load the pomodoro widget:
+local pomodoro = require("pomodoro")
+pomodoro.pre_text = ""
+pomodoro.init()
+
+-- Separator:
+separator = widget({type = "textbox"})
+separator.text = "║"
+
+-- Battery monitor:
+batwidget = widget({ type = "textbox" })
+vicious.register(batwidget, vicious.widgets.bat, "ϟ $1$2%", 120, 'BAT1')
+
+-- Weather:
+weatherwidget = widget({ type = "textbox" })
+vicious.register(weatherwidget, vicious.widgets.weather, "Sofia - ${tempc}°", 1200, 'LBSF')
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -153,8 +167,14 @@ for s = 1, screen.count() do
         },
         mylayoutbox[s],
         pomodoro.widget, pomodoro.icon_widget,
-        mytextclock,
         s == 1 and mysystray or nil,
+        separator,
+        mytextclock,
+        separator,
+        batwidget,
+        separator,
+        weatherwidget,
+        separator,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
