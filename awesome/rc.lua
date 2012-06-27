@@ -97,6 +97,50 @@ vicious.register(batwidget, vicious.widgets.bat, "ϟ $1$2%", 120, 'BAT1')
 weatherwidget = widget({ type = "textbox" })
 vicious.register(weatherwidget, vicious.widgets.weather, "Sofia: ${tempc}°", 1200, 'LBSF')
 
+-- Volume control:
+volumecfg = {}
+volumecfg.cardid  = 0
+volumecfg.channel = "Master"
+volumecfg.widget = widget({ type = "textbox", name = "volumecfg.widget", align = "right" })
+
+volumecfg_t = awful.tooltip({ objects = { volumecfg.widget },})
+volumecfg_t:set_text("Volume")
+
+-- command must start with a space!
+volumecfg.mixercommand = function (command)
+       local fd = io.popen("amixer -c " .. volumecfg.cardid .. command)
+       local status = fd:read("*all")
+       fd:close()
+
+       local volume = string.match(status, "(%d?%d?%d)%%")
+       volume = string.format("Vol.% 3d", volume)
+       status = string.match(status, "%[(o[^%]]*)%]")
+       if string.find(status, "on", 1, true) then
+               volume = volume .. "%"
+       else
+               volume = volume .. "M"
+       end
+       volumecfg.widget.text = volume
+end
+volumecfg.update = function ()
+       volumecfg.mixercommand(" sget " .. volumecfg.channel)
+end
+volumecfg.up = function ()
+       volumecfg.mixercommand(" sset " .. volumecfg.channel .. " 1%+")
+end
+volumecfg.down = function ()
+       volumecfg.mixercommand(" sset " .. volumecfg.channel .. " 1%-")
+end
+volumecfg.toggle = function ()
+       volumecfg.mixercommand(" sset " .. volumecfg.channel .. " toggle")
+end
+volumecfg.widget:buttons({
+       button({ }, 4, function () volumecfg.up() end),
+       button({ }, 5, function () volumecfg.down() end),
+       button({ }, 1, function () volumecfg.toggle() end)
+})
+volumecfg.update()
+
 -- Create a wibox for each screen and add it
 mywibox = {}
 mywibox2 = {}
@@ -169,9 +213,11 @@ for s = 1, screen.count() do
         },
         mytextclock,
         separator,
+        weatherwidget,
+        separator,
         batwidget,
         separator,
-        weatherwidget,
+        volumecfg.widget,
         separator,
         pomodoro.widget, pomodoro.icon_widget,
         s == 1 and mysystray or nil,
@@ -248,7 +294,12 @@ globalkeys = awful.util.table.join(
                   mypromptbox[mouse.screen].widget,
                   awful.util.eval, nil,
                   awful.util.getdir("cache") .. "/history_eval")
-              end)
+              end),
+
+    -- Volume control:
+    awful.key({ }, "XF86AudioRaiseVolume", function () volumecfg.up() end),
+    awful.key({ }, "XF86AudioLowerVolume", function () volumecfg.down() end),
+    awful.key({ }, "XF86AudioMute", function () volumecfg.toggle() end)
 )
 
 clientkeys = awful.util.table.join(
