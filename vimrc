@@ -3,6 +3,11 @@ set ts=4 sts=4 sw=4 et
 
 syntax on
 
+" Copy/Paste to/From X clipboard:
+set clipboard=unnamed
+
+set history=100
+
 if has("autocmd")
   " Enable file type detection
   filetype on
