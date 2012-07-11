@@ -34,7 +34,6 @@ layouts =
     awful.layout.suit.floating,
     awful.layout.suit.tile,
     awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
     awful.layout.suit.max,
     awful.layout.suit.max.fullscreen,
     awful.layout.suit.magnifier
@@ -45,8 +44,8 @@ layouts =
 -- Define a tag table which hold all screen tags.
 tags = {
     names = { "main", "www", "mail", "skype", "psi", "music", "other" },
-    layout = { layouts[1], layouts[5], layouts[5], layouts[2], layouts[2],
-               layouts[5], layouts[4], }
+    layout = { layouts[1], layouts[4], layouts[4], layouts[2], layouts[2],
+               layouts[4], layouts[1], }
 }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
@@ -54,19 +53,9 @@ for s = 1, screen.count() do
 end
 -- }}}
 
--- {{{ Menu
--- Create a laucher widget and a main menu
-myawesomemenu = {
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awful.util.getdir("config") .. "/rc.lua" },
-   { "restart", awesome.restart },
-   { "quit", awesome.quit }
-}
-
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "Debian", debian.menu.Debian_menu.Debian },
+mymainmenu = awful.menu({ items = { { "Debian", debian.menu.Debian_menu.Debian },
                                     { "open terminal", terminal },
-                                    { "Log out/Shutdown", awful.util.getdir("config") .. "/logout_dialog.sh" }
+                                    { "Log out", awful.util.getdir("config") .. "/logout_dialog.sh" }
                                   }
                         })
 
@@ -144,7 +133,6 @@ volumecfg.update()
 
 -- Create a wibox for each screen and add it
 mywibox = {}
-mywibox2 = {}
 mypromptbox = {}
 mylayoutbox = {}
 mytaglist = {}
@@ -203,7 +191,6 @@ for s = 1, screen.count() do
 
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "top", screen = s })
-    mywibox2[s] = awful.wibox({ position = "bottom", screen = s })
     -- Add widgets to the wibox - order matters
     mywibox[s].widgets = {
         {
@@ -212,6 +199,7 @@ for s = 1, screen.count() do
             mypromptbox[s],
             layout = awful.widget.layout.horizontal.leftright
         },
+        mylayoutbox[s],
         mytextclock,
         separator,
         weatherwidget,
@@ -222,10 +210,6 @@ for s = 1, screen.count() do
         separator,
         pomodoro.widget, pomodoro.icon_widget,
         s == 1 and mysystray or nil,
-        layout = awful.widget.layout.horizontal.rightleft
-    }
-    mywibox2[s].widgets = {
-        mylayoutbox[s],
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
@@ -234,7 +218,6 @@ end
 
 -- {{{ Mouse bindings
 root.buttons(awful.util.table.join(
-    awful.button({ }, 3, function () mymainmenu:toggle() end),
     awful.button({ }, 4, awful.tag.viewnext),
     awful.button({ }, 5, awful.tag.viewprev)
 ))
