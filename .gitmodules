@@ -1,5 +1,5 @@
 [submodule ".zsh/zshuery"]
-	path = .zsh/zshuery
+	path = zsh/zshuery
 	url = git://github.com/myfreeweb/zshuery.git
 [submodule "awesome/pomodoro"]
 	path = awesome/pomodoro
