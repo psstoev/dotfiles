@@ -19,6 +19,3 @@ source ${HOME}/.zsh/functions.sh
 
 # Custom functions:
 source ${HOME}/.zsh/custom/git.sh
-
-# rvm:
-rvm ree

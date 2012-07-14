@@ -7,7 +7,5 @@ chpwd() {
 
 # Draw the prompt:
 precmd() {
-    export PROMPT="
-%F{green}%B%n%b%f@%F{green}%B%m%b%f %F{blue}%B%~%b%f ${GIT_BRANCH}
-→  "
+    export PROMPT="%F{green}%B%n%b%f@%F{green}%B%m%b%f %F{blue}%B%~%b%f${GIT_BRANCH}$ "
 }
