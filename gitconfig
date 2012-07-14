@@ -6,3 +6,13 @@
 	diff = auto
 	branch = auto
 	status = auto
+
+[alias]
+	st = status
+	ci = commit
+	ca = commit -a
+	di = diff
+	dc = diff --cached
+
+[merge]
+	tool = vimdiff
