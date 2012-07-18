@@ -417,4 +417,5 @@ end
 
 run_once("nm-applet")
 run_once("blueman-applet")
+awful.util.spawn_with_shell("killall xxkb; xxkb")
 -- }}}
