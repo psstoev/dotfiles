@@ -34,6 +34,7 @@ layouts =
     awful.layout.suit.floating,
     awful.layout.suit.tile,
     awful.layout.suit.tile.top,
+    awful.layout.suit.fair.horizontal,
     awful.layout.suit.max,
     awful.layout.suit.max.fullscreen,
     awful.layout.suit.magnifier
@@ -43,9 +44,9 @@ layouts =
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {
-    names = { "main", "www", "mail", "skype", "psi", "music", "other" },
-    layout = { layouts[1], layouts[4], layouts[4], layouts[2], layouts[2],
-               layouts[4], layouts[1], }
+    names = { "main", "www", "mail", "im", "music", "other" },
+    layout = { layouts[1], layouts[5], layouts[5], layouts[4],
+               layouts[5], layouts[1], }
 }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
@@ -197,6 +198,7 @@ for s = 1, screen.count() do
             mylauncher,
             mytaglist[s],
             mypromptbox[s],
+            separator,
             layout = awful.widget.layout.horizontal.leftright
         },
         mylayoutbox[s],
