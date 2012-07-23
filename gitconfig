@@ -3,9 +3,7 @@
 	email = psstoev@gmail.com
 
 [color]
-	diff = auto
-	branch = auto
-	status = auto
+	ui = auto
 
 [alias]
 	st = status
@@ -13,6 +11,7 @@
 	ca = commit -a
 	di = diff
 	dc = diff --cached
+	pr = pull --rebase
 
 [merge]
 	tool = vimdiff
