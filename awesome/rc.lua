@@ -18,14 +18,11 @@ beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
+screenlocker = "slock"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
@@ -54,9 +51,10 @@ for s = 1, screen.count() do
 end
 -- }}}
 
+--- {{{ Menu
 mymainmenu = awful.menu({ items = { { "Debian", debian.menu.Debian_menu.Debian },
-                                    { "open terminal", terminal },
-                                    { "Log out", awful.util.getdir("config") .. "/logout_dialog.sh" }
+                                    { "Lock Screen", screenlocker },
+                                    { "Power off", awful.util.getdir("config") .. "/poweroff_dialog.sh" }
                                   }
                         })
 
@@ -361,15 +359,9 @@ awful.rules.rules = {
                      focus = true,
                      keys = clientkeys,
                      buttons = clientbuttons } },
-    { rule = { class = "MPlayer" },
-      properties = { floating = true } },
-    { rule = { class = "pinentry" },
-      properties = { floating = true } },
-    { rule = { class = "gimp" },
-      properties = { floating = true } },
     -- Set Firefox to always map on tags number 2 of screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { tag = tags[1][2] } },
+    { rule = { class = "Firefox" },
+      properties = { tag = tags[1][2] } },
 }
 -- }}}
 
@@ -380,12 +372,12 @@ client.add_signal("manage", function (c, startup)
     -- awful.titlebar.add(c, { modkey = modkey })
 
     -- Enable sloppy focus
-    c:add_signal("mouse::enter", function(c)
-        if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
-            and awful.client.focus.filter(c) then
-            client.focus = c
-        end
-    end)
+    -- c:add_signal("mouse::enter", function(c)
+    --     if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
+    --         and awful.client.focus.filter(c) then
+    --         client.focus = c
+    --     end
+    -- end)
 
     if not startup then
         -- Set the windows at the slave,
@@ -404,7 +396,6 @@ client.add_signal("focus", function(c) c.border_color = beautiful.border_focus e
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
-
 -- {{{ Autostart applications
 function run_once(cmd)
   findme = cmd
@@ -416,6 +407,6 @@ function run_once(cmd)
 end
 
 run_once("nm-applet")
-run_once("blueman-applet")
+run_once("bluetooth-applet")
 awful.util.spawn_with_shell("killall xxkb; xxkb")
 -- }}}
