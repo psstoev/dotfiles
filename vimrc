@@ -1,4 +1,9 @@
 set nocompatible
+call pathogen#infect()
+
+" Enable file type detection
+filetype on
+filetype plugin indent on
 syntax on
 set number
 set history=100
@@ -15,8 +20,6 @@ inoremap kj <Esc>
 set ts=2 sts=2 sw=2 et
 
 if has("autocmd")
-  " Enable file type detection
-  filetype on
 
   autocmd FileType python setlocal ts=4 sts=4 sw=4 et
   autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
