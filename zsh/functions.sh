@@ -1,11 +1,10 @@
 # Customize zsh's functions:
 
-# Check for interesting directories:
-chpwd() {
-    git_branch
-}
-
 # Draw the prompt:
 precmd() {
-    export PROMPT="%F{green}%B%n%b%f@%F{green}%B%m%b%f %F{blue}%B%~%b%f${GIT_BRANCH}$ "
+    # Check for active virtualenv:
+    virtual_env_name
+    # check for git branch change:
+    git_branch
+    PROMPT="${VIRTUAL_ENV_NAME}%F{green}%B%n%b%f@%F{green}%B%m%b%f %F{blue}%B%~%b%f${GIT_BRANCH}$ "
 }

@@ -18,4 +18,6 @@ source ${HOME}/.zsh/variables.sh
 source ${HOME}/.zsh/functions.sh
 
 # Custom functions:
-source ${HOME}/.zsh/custom/git.sh
+for i in ${HOME}/.zsh/custom/*; do
+    source $i
+done

@@ -4,7 +4,7 @@ git_branch() {
 
     # Set the GIT_BRANCH variable accordingly:
     if [[ -n $BRANCH ]]; then
-        export GIT_BRANCH=" %F{red}(git: ${BRANCH})%f"
+        export GIT_BRANCH=" %F{red}(${BRANCH})%f"
     else
         export GIT_BRANCH=''
     fi
