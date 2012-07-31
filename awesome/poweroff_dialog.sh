@@ -14,25 +14,25 @@ ACTION=`zenity --width=128 --height=256 --list --radiolist \
 if [ -n "${ACTION}" ];then
   case $ACTION in
   Shutdown)
-    dbus-send --system \
+    dbus-send --system --print-reply \
     --dest=org.freedesktop.ConsoleKit \
     /org/freedesktop/ConsoleKit/Manager \
     org.freedesktop.ConsoleKit.Manager.Stop
     ;;
   Reboot)
-    dbus-send --system \
+    dbus-send --system --print-reply \
       --dest=org.freedesktop.ConsoleKit \
       /org/freedesktop/ConsoleKit/Manager \
       org.freedesktop.ConsoleKit.Manager.Restart
     ;;
   Suspend)
-    dbus-send --system \
+    dbus-send --system --print-reply \
     --dest=org.freedesktop.UPower \
     /org/freedesktop/UPower \
     org.freedesktop.UPower.Suspend
     ;;
   Hibernate)
-    dbus-send --system \
+    dbus-send --system --print-reply \
     --dest=org.freedesktop.UPower \
     /org/freedesktop/UPower \
     org.freedesktop.UPower.Hibernate
