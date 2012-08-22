@@ -1,7 +1,7 @@
 ! Stolen zenburn theme from here: https://gist.github.com/564084
 urxvt*background:  #3f3f3f
 urxvt*foreground:  #dcdccc
-urxvt*fading:      40
+urxvt*fading:      50
 urxvt*fadeColor:   #020202
 urxvt*cursorColor: #dcdccc
 
@@ -15,8 +15,8 @@ urxvt*color6:  #8cd0d3
 urxvt*color7:  #dcdccc
 
 urxvt*color8:  #708090
-urxvt*color9:  #cc9393
-urxvt*color10: #7f9f7f
+urxvt*color9:  #dca3a3
+urxvt*color10: #c3bf9f
 urxvt*color11: #f0dfaf
 urxvt*color12: #94bff3
 urxvt*color13: #ec93d3
@@ -25,7 +25,20 @@ urxvt*color15: #ffffff
 
 urxvt*scrollBar: false
 
-!! urxvt font configuration:
+! urxvt font configuration:
 urxvt*boldColors: on
 urxvt*font:       xft:liberation mono:pixelsize=15:antialias=true:hinting=true:medium
 urxvt*boldFont:   xft:liberation mono:pixelsize=15:antialias=true:hinting=true:bold
+
+! urxvt extensions:
+urxvt.perl-lib: /home/plamen/.urxvt
+urxvt.perl-ext-common: clipboard,keyboard-select,url-select,tabbed
+
+urxvt.keysym.M-c: perl:clipboard:copy
+urxvt.keysym.M-v: perl:clipboard:paste
+urxvt.clipboard.copycmd:  xclip -i -selection clipboard
+urxvt.clipboard.pastecmd: xclip -o -selection clipboard
+
+urxvt.keysym.M-Escape: perl:keyboard-select:activate
+
+urxvt.keysym.M-u: perl:url-select:select_next

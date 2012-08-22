@@ -10,7 +10,7 @@ function create_new_link() {
 }
 
 HOME=~
-declare -a COPY_TO_HOME=(gitconfig gvimrc vim vimrc Xdefaults xxkbrc zsh zshrc)
+declare -a COPY_TO_HOME=(gitconfig gvimrc urxvt vim vimrc Xdefaults xxkbrc zsh zshrc)
 declare -a COPY_TO_CONFIG=(awesome)
 
 
