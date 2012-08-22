@@ -6,12 +6,13 @@
 	ui = auto
 
 [alias]
-	st = status
-	ci = commit
 	ca = commit -a
+	ci = commit
+  co = checkout
 	di = diff
 	dc = diff --cached
 	pr = pull --rebase
+	st = status
 
 [merge]
 	tool = vimdiff
