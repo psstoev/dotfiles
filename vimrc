@@ -13,6 +13,9 @@ set autoindent
 " Show invisible characters:
 set listchars=tab:▸\ ,eol:¬
 
+set incsearch
+set hlsearch
+
 " Custom mappings:
 inoremap kj <Esc>
 
