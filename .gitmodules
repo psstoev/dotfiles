@@ -10,3 +10,9 @@
 [submodule "urxvt"]
 	path = urxvt
 	url = git://github.com/muennich/urxvt-perls.git
+[submodule "awesome/themes/solarized"]
+	path = awesome/themes/solarized
+	url = git://github.com/cycojesus/awesome-solarized.git
+[submodule "vim/bundle/vim-colors-solarized"]
+	path = vim/bundle/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git

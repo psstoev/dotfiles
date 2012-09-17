@@ -4,7 +4,7 @@ call pathogen#infect()
 " Enable file type detection
 filetype on
 filetype plugin indent on
-syntax on
+syntax enable
 set number
 set history=100
 " Copy/Paste to/From X clipboard:
