@@ -92,22 +92,27 @@ volumecfg.cardid  = 0
 volumecfg.channel = "Master"
 volumecfg.widget = widget({ type = "textbox", name = "volumecfg.widget", align = "right" })
 
+volume_active = awful.util.getdir("config") .. "/icons/volume-hi.png"
+volume_mute = awful.util.getdir("config") .. "/icons/volume-mute.png"
+volumecfg.icon_widget = widget({ type = "imagebox" })
+volumecfg.icon_widget.image = image(volume_active)
+
 volumecfg_t = awful.tooltip({ objects = { volumecfg.widget },})
 volumecfg_t:set_text("Volume")
 
 -- command must start with a space!
 volumecfg.mixercommand = function (command)
-       local fd = io.popen("amixer -c " .. volumecfg.cardid .. command)
+       local fd = io.popen("amixer -D default" .. command)
        local status = fd:read("*all")
        fd:close()
 
        local volume = string.match(status, "(%d?%d?%d)%%")
-       volume = string.format("Vol.% 3d", volume)
+       volume = string.format("%3d", volume)
        status = string.match(status, "%[(o[^%]]*)%]")
        if string.find(status, "on", 1, true) then
-               volume = volume .. "%"
+               volumecfg.icon_widget.image = image(volume_active)
        else
-               volume = volume .. "M"
+               volumecfg.icon_widget.image = image(volume_mute)
        end
        volumecfg.widget.text = volume
 end
@@ -206,7 +211,7 @@ for s = 1, screen.count() do
         separator,
         batwidget,
         separator,
-        volumecfg.widget,
+        volumecfg.widget, volumecfg.icon_widget,
         separator,
         pomodoro.widget, pomodoro.icon_widget,
         s == 1 and mysystray or nil,
