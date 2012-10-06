@@ -80,7 +80,9 @@ separator.text = " │ "
 
 -- Battery monitor:
 batwidget = widget({ type = "textbox" })
-vicious.register(batwidget, vicious.widgets.bat, "ϟ $1$2%", 127, 'BAT1')
+vicious.register(batwidget, vicious.widgets.bat, "$1$2%", 127, 'BAT1')
+baticon_widget = widget({ type = "imagebox" })
+baticon_widget.image = image(awful.util.getdir("config") .. "/icons/battery.png")
 
 -- Weather:
 weatherwidget = widget({ type = "textbox" })
@@ -209,7 +211,7 @@ for s = 1, screen.count() do
         separator,
         weatherwidget,
         separator,
-        batwidget,
+        batwidget, baticon_widget,
         separator,
         volumecfg.widget, volumecfg.icon_widget,
         separator,
