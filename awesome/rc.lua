@@ -80,11 +80,11 @@ separator.text = " │ "
 
 -- Battery monitor:
 batwidget = widget({ type = "textbox" })
-vicious.register(batwidget, vicious.widgets.bat, "ϟ $1$2%", 120, 'BAT1')
+vicious.register(batwidget, vicious.widgets.bat, "ϟ $1$2%", 127, 'BAT1')
 
 -- Weather:
 weatherwidget = widget({ type = "textbox" })
-vicious.register(weatherwidget, vicious.widgets.weather, "Sofia: ${tempc}°", 1200, 'LBSF')
+vicious.register(weatherwidget, vicious.widgets.weather, "Sofia: ${tempc}°", 1193, 'LBSF')
 
 -- Volume control:
 volumecfg = {}
