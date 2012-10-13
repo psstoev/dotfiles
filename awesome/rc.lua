@@ -135,6 +135,11 @@ volumecfg.widget:buttons({
        button({ }, 5, function () volumecfg.down() end),
        button({ }, 1, function () volumecfg.toggle() end)
 })
+volumecfg.icon_widget:buttons({
+       button({ }, 4, function () volumecfg.up() end),
+       button({ }, 5, function () volumecfg.down() end),
+       button({ }, 1, function () volumecfg.toggle() end)
+})
 volumecfg.update()
 
 -- Create a wibox for each screen and add it
