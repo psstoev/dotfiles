@@ -10,3 +10,8 @@ zstyle :compinstall filename '/home/plamen/.zshrc'
 
 # Custom configuration:
 source "${HOME}/.zsh/init.sh"
+
+# RVM
+source /home/plamen/.rvm/scripts/rvm
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

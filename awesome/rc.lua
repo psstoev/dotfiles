@@ -424,5 +424,6 @@ end
 
 run_once("nm-applet")
 run_once("bluetooth-applet")
+run_once("gnome-settings-daemon")
 awful.util.spawn_with_shell("killall xxkb; xxkb")
 -- }}}
