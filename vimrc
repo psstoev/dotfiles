@@ -29,7 +29,7 @@ if has("autocmd")
   autocmd FileType php setlocal ts=4 sts=4 sw=4 noet
   autocmd FileType xml setlocal ts=4 sts=4 sw=4 et
   autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
-  autocmd FileType java setlocal ts=4 sts=4 sw=4 noet
+  autocmd FileType java setlocal ts=4 sts=4 sw=4 et
 
   autocmd BufNewFile,BufRead *.pro setfiletype prolog
   autocmd BufNewFile,BufRead Capfile setfiletype ruby
