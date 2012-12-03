@@ -372,7 +372,7 @@ awful.rules.rules = {
                      keys = clientkeys,
                      buttons = clientbuttons } },
     -- Set Firefox to always map on tags number 2 of screen 1.
-    { rule = { class = "Firefox" },
+    { rule = { class = "Iceweasel" },
       properties = { tag = tags[1][4] } },
     { rule = { class = "Icedove" },
       properties = { tag = tags[1][5] } },
@@ -424,6 +424,5 @@ end
 
 run_once("nm-applet")
 run_once("bluetooth-applet")
-run_once("gnome-settings-daemon")
 awful.util.spawn_with_shell("killall xxkb; xxkb")
 -- }}}
