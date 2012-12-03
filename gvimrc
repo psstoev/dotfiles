@@ -15,5 +15,4 @@ map <M-7> 7gt
 map <M-8> 8gt
 map <M-9> 9gt
 
-set background=light
-colorscheme solarized
+colorscheme github
