@@ -23,6 +23,9 @@ nnoremap <Tab> :bn<CR>
 " Default indentation settings:
 set ts=2 sts=2 sw=2 et
 
+" Ignore certain files in Ctrl-P:
+set wildignore+=*.pyc,*.png,*.jpg
+
 if has("autocmd")
 
   autocmd FileType python setlocal ts=4 sts=4 sw=4 et
