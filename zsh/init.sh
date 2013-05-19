@@ -21,3 +21,5 @@ source ${HOME}/.zsh/functions.sh
 for i in ${HOME}/.zsh/custom/*; do
     source $i
 done
+
+eval $(keychain --eval --agents ssh -Q --quiet id_rsa)
