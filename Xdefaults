@@ -24,6 +24,8 @@ urxvt*pointerColorForeground: #93a1a1
 !urxvt*color14:    #93a1a1
 !urxvt*color15:    #fdf6e3
 
+urxvt*termName: rxvt-unicode-256color
+
 ! Stolen from https://bbs.archlinux.org/viewtopic.php?pid=1084018#p1084018
 urxvt*background:                    #262626
 urxvt*foreground:                    #c2c2b0
