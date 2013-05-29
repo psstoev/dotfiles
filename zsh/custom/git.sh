@@ -33,10 +33,6 @@ git_status() {
       stats+='?'
     fi
 
-    if [[ $git_st =~ 'CONFLICT' ]]; then
-      status+='⚡'
-    fi
-
     # Set the GIT_BRANCH variable accordingly:
     if [[ -n $branch ]]; then
       if [[ -n $stats ]]; then
