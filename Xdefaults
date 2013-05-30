@@ -1,69 +1,39 @@
-! Stolen zenburn theme from here: https://gist.github.com/564084
-!! drop in Solarized colorscheme for Xresources/Xdefaults
-urxvt*cursorColor:            #93a1a1
-urxvt*pointerColorBackground: #586e75
-urxvt*pointerColorForeground: #93a1a1
+! Stolen zenburn theme from here: http://snk.tuxfamily.org/log/zenburn-terminal-color-scheme.html
+URxvt*color0         : #000d18
+URxvt*color1         : #e89393
+URxvt*color2         : #9ece9e
+URxvt*color3         : #f0dfaf
+URxvt*color4         : #8cd0d3
+URxvt*color5         : #c0bed1
+URxvt*color6         : #dfaf8f
+URxvt*color7         : #efefef
+URxvt*color8         : #000d18
+URxvt*color9         : #e89393
+URxvt*color10        : #9ece9e
+URxvt*color11        : #f0dfaf
+URxvt*color12        : #8cd0d3
+URxvt*color13        : #c0bed1
+URxvt*color14        : #dfaf8f
+URxvt*color15        : #efefef
+URxvt*colorBD        : #ffcfaf
+URxvt*colorIT        : #90d4aa
+URxvt*colorUL        : #ccdc90
+URxvt*foreground     : #dcdccc
+URxvt*background     : #1f1f1f
+URxvt*cursorColor    : #8faf9f
 
-!! Solarized-darkish:
-!urxvt*background: #002b36
-!urxvt*foreground: #657b83
-!urxvt*color0:     #073642
-!urxvt*color1:     #dc322f
-!urxvt*color2:     #859900
-!urxvt*color3:     #b58900
-!urxvt*color4:     #268bd2
-!urxvt*color5:     #d33682
-!urxvt*color6:     #2aa198
-!urxvt*color7:     #eee8d5
-!urxvt*color8:     #002b36
-!urxvt*color9:     #cb4b16
-!urxvt*color10:    #586e75
-!urxvt*color11:    #657b83
-!urxvt*color12:    #839496
-!urxvt*color13:    #6c71c4
-!urxvt*color14:    #93a1a1
-!urxvt*color15:    #fdf6e3
-
-! Stolen from https://bbs.archlinux.org/viewtopic.php?pid=1084018#p1084018
-urxvt*background:                    #262626
-urxvt*foreground:                    #c2c2b0
-! Black + DarkGrey
-urxvt*color0:                        #262626
-urxvt*color8:                        #73675b
-! DarkRed + Red
-urxvt*color1:                        #a64211
-urxvt*color9:                        #cc5214
-! DarkGreen + Green
-urxvt*color2:                        #638046
-urxvt*color10:                       #80a65b
-! DarkYellow + Yellow
-urxvt*color3:                        #bf8c25
-urxvt*color11:                       #e6a82d
-! DarkBlue + Blue
-urxvt*color4:                        #4d6d99
-urxvt*color12:                       #6088bf
-! DarkMangenta + Mangenta
-urxvt*color5:                        #996b89
-urxvt*color13:                       #bf86ac
-! DarkCyan + Cyan
-urxvt*color6:                        #6b8e99
-urxvt*color14:                       #86b1bf
-! LightGrey + White
-urxvt*color7:                        #998a7a
-urxvt*color15:                       #c2c2b0
-
-urxvt*scrollBar: false
-
+URxvt*termName: rxvt-unicode-256color
+URxvt*scrollBar: false
 ! urxvt font configuration:
-urxvt*boldColors: on
-urxvt*font:       xft:liberation mono:pixelsize=15:antialias=true:hinting=true:medium
-urxvt*boldFont:   xft:liberation mono:pixelsize=15:antialias=true:hinting=true:bold
+URxvt*boldColors: on
+URxvt*font:       xft:liberation mono:pixelsize=15:antialias=true:hinting=true:medium
+URxvt*boldFont:   xft:liberation mono:pixelsize=15:antialias=true:hinting=true:bold
 
 ! urxvt extensions:
-urxvt.perl-lib: /home/plamen/.urxvt
-urxvt.perl-ext-common: clipboard
+URxvt.perl-lib: /home/plamen/.urxvt
+URxvt.perl-ext-common: clipboard
 
-urxvt.keysym.M-c: perl:clipboard:copy
-urxvt.keysym.M-v: perl:clipboard:paste
-urxvt.clipboard.copycmd:  xclip -i -selection clipboard
-urxvt.clipboard.pastecmd: xclip -o -selection clipboard
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.clipboard.copycmd:  xclip -i -selection clipboard
+URxvt.clipboard.pastecmd: xclip -o -selection clipboard
