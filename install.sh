@@ -10,7 +10,7 @@ function create_new_link() {
 }
 
 HOME=~
-declare -a COPY_TO_HOME=(gitconfig gvimrc tmux.conf urlview urxvt vim vimrc Xdefaults zsh zshrc)
+declare -a COPY_TO_HOME=(gitconfig gvimrc tmux.conf urlview urxvt vim vimrc Xdefaults xxkbrc zsh zshrc)
 declare -a COPY_TO_CONFIG=(awesome)
 
 
