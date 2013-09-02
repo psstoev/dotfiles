@@ -26,14 +26,7 @@ URxvt*termName: rxvt-unicode-256color
 URxvt*scrollBar: false
 ! urxvt font configuration:
 URxvt*boldColors: on
-URxvt*font:       xft:liberation mono:pixelsize=15:antialias=true:hinting=true:medium
-URxvt*boldFont:   xft:liberation mono:pixelsize=15:antialias=true:hinting=true:bold
-
-! urxvt extensions:
-URxvt.perl-lib: /home/plamen/.urxvt
-URxvt.perl-ext-common: clipboard
-
-URxvt.keysym.M-c: perl:clipboard:copy
-URxvt.keysym.M-v: perl:clipboard:paste
-URxvt.clipboard.copycmd:  xclip -i -selection clipboard
-URxvt.clipboard.pastecmd: xclip -o -selection clipboard
+!URxvt*font:       xft:liberation mono:pixelsize=15:antialias=true:hinting=true:medium
+!URxvt*boldFont:   xft:liberation mono:pixelsize=15:antialias=true:hinting=true:bold
+URxvt*font:       xft:source code pro:pixelsize=17:antialias=true:hinting=true:medium
+URxvt*boldFont:   xft:source code pro:pixelsize=17:antialias=true:hinting=true:bold
