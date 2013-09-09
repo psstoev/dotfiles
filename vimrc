@@ -12,7 +12,7 @@ set clipboard=unnamed
 set autoindent
 " Show invisible characters:
 set listchars=tab:▸\ ,trail:·
-set list
+"set list
 
 set incsearch
 set hlsearch
@@ -23,6 +23,7 @@ inoremap kj <Esc>
 nnoremap <Tab> :bn<CR>
 nnoremap <S-Tab> :bp<CR>
 nnoremap <Leader><Tab> :bp\|bd #<CR>
+nmap <Leader>l :set list!<CR>
 
 " Default indentation settings:
 set ts=2 sts=2 sw=2 et
@@ -59,4 +60,5 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.pro setfiletype prolog
   autocmd BufNewFile,BufRead *.tpl setfiletype php
   autocmd BufNewFile,BufRead Capfile setfiletype ruby
+  autocmd BufNewFile,BufRead *.rs set filetype=rust
 endif

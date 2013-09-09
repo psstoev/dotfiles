@@ -17,7 +17,7 @@
 # Regular expression to use to match URLs.
 
 #REGEXP (((http|https|ftp|gopher)|mailto):(//)?[^ >"\t]*|www\.[-a-z0-9.]+)[^ .,;\t>">\):]
-REGEXP (((http|https|ftp|gopher)|mailto)[.:][^ >"\t]*|www\.[-a-z0-9.]+)[^ .,;\t>">\):]
+REGEXP (((http|https|ftp|gopher)|mailto|file)[.:][^ >"\t]*|www\.[-a-z0-9.]+)[^ .,;\t>">\):]
 
 # Command to invoke for selected URL.  Use lynx, netscape, or url_handler.sh
 # shell script.  Alternatively, you can leave COMMAND unset and set the BROWSER
