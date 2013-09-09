@@ -61,4 +61,5 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.tpl setfiletype php
   autocmd BufNewFile,BufRead Capfile setfiletype ruby
   autocmd BufNewFile,BufRead *.rs set filetype=rust
+  autocmd BufNewFile,BufRead AppPrinter setfiletype javascript
 endif
