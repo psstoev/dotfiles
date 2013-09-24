@@ -26,7 +26,5 @@ URxvt*termName: rxvt-unicode-256color
 URxvt*scrollBar: false
 ! urxvt font configuration:
 URxvt*boldColors: on
-!URxvt*font:       xft:liberation mono:pixelsize=15:antialias=true:hinting=true:medium
-!URxvt*boldFont:   xft:liberation mono:pixelsize=15:antialias=true:hinting=true:bold
-URxvt*font:       xft:source code pro:pixelsize=17:antialias=true:hinting=true:medium
-URxvt*boldFont:   xft:source code pro:pixelsize=17:antialias=true:hinting=true:bold
+URxvt*font:       xft:ubuntu mono:pixelsize=17:antialias=true:hinting=true:medium
+URxvt*boldFont:   xft:ubuntu mono:pixelsize=17:antialias=true:hinting=true:bold
