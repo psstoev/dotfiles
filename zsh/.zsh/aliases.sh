@@ -10,3 +10,5 @@ which ack-grep 2>/dev/null >/dev/null
 if [[ $? -eq 0 ]]; then
     alias ack='ack-grep'
 fi
+
+alias gitg='gitg 2>/dev/null'

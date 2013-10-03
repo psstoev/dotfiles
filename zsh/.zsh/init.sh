@@ -23,3 +23,6 @@ for i in ${HOME}/.zsh/custom/*; do
 done
 
 eval $(keychain --eval --agents ssh -Q --quiet id_rsa)
+
+# Initialize rbenv:
+eval "$(rbenv init -)"

@@ -48,6 +48,8 @@ set mouse=a
 let g:syntastic_php_checkers=['php']
 let g:syntastic_css_checkers=[]
 
+let g:snipMate = {}
+
 if has("autocmd")
 
   autocmd FileType python setlocal ts=4 sts=4 sw=4 et
