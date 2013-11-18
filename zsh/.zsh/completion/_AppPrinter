@@ -1,0 +1,11 @@
+#compdef AppPrinter
+
+_AppPrinter() {
+  local curcontext="$curcontext"
+  typeset -A opt_args
+
+  _arguments \
+    '*: :->provider'
+
+  compadd $(./AppPrinter/AppPrinter --list)
+}
