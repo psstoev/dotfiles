@@ -24,7 +24,4 @@ URxvt*cursorColor    : #8faf9f
 
 URxvt*termName: rxvt-unicode-256color
 URxvt*scrollBar: false
-! urxvt font configuration:
-URxvt*boldColors: on
-URxvt*font:       xft:ubuntu mono:pixelsize=17:antialias=true:hinting=true:medium
-URxvt*boldFont:   xft:ubuntu mono:pixelsize=17:antialias=true:hinting=true:bold
+URxvt*font:       xft:essential pragmatapro:pixelsize=16:antialias=true:hinting=true:medium
