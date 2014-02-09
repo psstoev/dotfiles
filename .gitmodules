@@ -40,3 +40,6 @@
 [submodule "vim/.vim/bundle/rust"]
 	path = vim/.vim/bundle/rust
 	url = git://github.com/wting/rust.vim.git
+[submodule "vim/.vim/bundle/vim-io"]
+	path = vim/.vim/bundle/vim-io
+	url = https://github.com/xhr/vim-io.git
