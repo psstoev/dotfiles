@@ -6,7 +6,7 @@ source ${HOME}/.zsh/zshuery/zshuery.sh
 load_defaults
 load_aliases
 #load_correction
-load_completion ${HOME}/.zsh/zshuery/completion
+#load_completion ${HOME}/.zsh/zshuery/completion
 load_completion ${HOME}/.zsh/completion
 
 # I had to set it again, beacause of some strange bug in Ubuntu

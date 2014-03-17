@@ -57,7 +57,7 @@ if has("autocmd")
   autocmd FileType xml setlocal ts=4 sts=4 sw=4 et
   autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
   autocmd FileType java setlocal ts=4 sts=4 sw=4 et
-  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 et
+  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 et
   autocmd FileType html setlocal ts=4 sts=4 sw=4 et
   autocmd FileType less setlocal ts=4 sts=4 sw=4 et
 
