@@ -43,3 +43,9 @@
 [submodule "vim/.vim/bundle/vim-io"]
 	path = vim/.vim/bundle/vim-io
 	url = https://github.com/xhr/vim-io.git
+[submodule "rbenv/.rbenv"]
+	path = rbenv/.rbenv
+	url = https://github.com/sstephenson/rbenv.git
+[submodule "_ruby-build"]
+	path = _ruby-build
+	url = https://github.com/sstephenson/ruby-build.git

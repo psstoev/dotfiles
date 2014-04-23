@@ -58,7 +58,7 @@ fi
 
 # Fakeroot:
 FAKEROOT="$HOME/fakeroot"
-export PATH="$FAKEROOT/bin:$PATH"
+PATH="$FAKEROOT/bin:$PATH"
 
 # Vray:
 if [ -d ~/vrayappsdk ]; then
@@ -67,3 +67,10 @@ fi
 
 # Enable core dumps:
 ulimit -c unlimited
+
+# rbenv:
+PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# Export variables:
+export PATH
