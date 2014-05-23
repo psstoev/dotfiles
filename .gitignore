@@ -2,4 +2,4 @@
 *~
 *swp
 # Ignore netrw history:
-vim/.netrwhist
+vim/.vim/.netrwhist

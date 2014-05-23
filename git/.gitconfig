@@ -2,6 +2,9 @@
 	name = Plamen Stoev
 	email = psstoev@gmail.com
 
+[push]
+	default = current
+
 [color]
 	ui = auto
 
@@ -13,6 +16,7 @@
 	dc = diff --cached
 	pr = pull --rebase
 	st = status
+	oneline = log --pretty=oneline
 
 [merge]
 	tool = vimdiff
