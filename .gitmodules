@@ -49,3 +49,9 @@
 [submodule "_ruby-build"]
 	path = _ruby-build
 	url = https://github.com/sstephenson/ruby-build.git
+[submodule "ndenv/.ndenv"]
+	path = ndenv/.ndenv
+	url = https://github.com/riywo/ndenv.git
+[submodule "_node-build"]
+	path = _node-build
+	url = https://github.com/riywo/node-build.git

@@ -68,9 +68,10 @@ fi
 # Enable core dumps:
 ulimit -c unlimited
 
-# rbenv:
-PATH="$HOME/.rbenv/bin:$PATH"
+# rbenv && ndenv:
+PATH="$HOME/.rbenv/bin:$HOME/.ndenv/bin:$PATH"
 eval "$(rbenv init -)"
+eval "$(ndenv init -)"
 
 # Export variables:
 export PATH
