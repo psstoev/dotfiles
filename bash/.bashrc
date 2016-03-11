@@ -30,7 +30,7 @@ GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWUPSTREAM=true
 
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[01;32m\]\h\[\033[00m\]: \[\033[01;34m\]\w\[\033[00m\]\[\033[01;33m\]$(__git_ps1 " (%s)")\[\033[00m\]\n\$ '
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[01;32m\]\h\[\033[00m\]: \[\033[01;34m\]\w\[\033[00m\]\[\033[01;35m\]$(__git_ps1 " (%s)")\[\033[00m\]\n\$ '
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -74,4 +74,10 @@ eval "$(rbenv init -)"
 eval "$(ndenv init -)"
 
 # Export variables:
-export PATH
+NVIDIA_DRIVER_ROOT=/usr/lib/nvidia-340
+export PATH=$NVIDIA_DRIVER_ROOT/bin:$PATH
+export CUDA_HOME=/usr/local/cuda
+export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$NVIDIA_DRIVER_ROOT:$LD_LIBRARY_PATH
+export NODE_PATH=$NODE_PATH:$HOME/fakeroot/lib/node_modules
+export GOROOT=$HOME/fakeroot/stow/go
+[[ -s "/home/plamen/.gvm/scripts/gvm" ]] && source "/home/plamen/.gvm/scripts/gvm"

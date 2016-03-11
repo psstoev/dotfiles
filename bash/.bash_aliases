@@ -16,4 +16,4 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 
-alias ack=ack-grep
+alias gl='git log --oneline --all --graph --decorate  $*'
