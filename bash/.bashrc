@@ -49,35 +49,12 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
-
-# Fakeroot:
-FAKEROOT="$HOME/fakeroot"
-PATH="$FAKEROOT/bin:$PATH"
-
-# Vray:
-if [ -d ~/vrayappsdk ]; then
-    source /home/plamen/vrayappsdk/setenv27.sh
-fi
-
 # Enable core dumps:
 ulimit -c unlimited
 
-# rbenv && ndenv:
-PATH="$HOME/.rbenv/bin:$HOME/.ndenv/bin:$PATH"
+# rbenv:
+PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-eval "$(ndenv init -)"
 
 # Export variables:
-NVIDIA_DRIVER_ROOT=/usr/lib/nvidia-340
-export PATH=$NVIDIA_DRIVER_ROOT/bin:$PATH
-export CUDA_HOME=/usr/local/cuda
-export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$NVIDIA_DRIVER_ROOT:$LD_LIBRARY_PATH
-export NODE_PATH=$NODE_PATH:$HOME/fakeroot/lib/node_modules
-export GOROOT=$HOME/fakeroot/stow/go
-[[ -s "/home/plamen/.gvm/scripts/gvm" ]] && source "/home/plamen/.gvm/scripts/gvm"
+export GOROOT=$HOME/.local/share/umake/go/go-lang
