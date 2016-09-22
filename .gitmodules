@@ -4,3 +4,6 @@
 [submodule "_ruby-build"]
 	path = _ruby-build
 	url = https://github.com/sstephenson/ruby-build.git
+[submodule "n"]
+	path = n
+	url = https://github.com/tj/n.git
