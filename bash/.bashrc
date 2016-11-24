@@ -58,13 +58,17 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Fakeroot:
+FAKEROOT="$HOME/fakeroot"
+PATH="$FAKEROOT/bin:$PATH"
 
 # Enable core dumps:
 ulimit -c unlimited
 
-# rbenv:
-PATH="$HOME/.rbenv/bin:$PATH"
+# rbenv && ndenv:
+PATH="$HOME/.rbenv/bin:$HOME/.ndenv/bin:$PATH"
 eval "$(rbenv init -)"
+eval "$(ndenv init -)"
 
 # Export variables:
 export GOROOT=$HOME/.local/share/umake/go/go-lang
