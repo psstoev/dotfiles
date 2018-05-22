@@ -13,3 +13,6 @@
 [submodule "vim/.vim/pack/git-plugins/start/ale"]
 	path = vim/.vim/pack/git-plugins/start/ale
 	url = https://github.com/w0rp/ale.git
+[submodule "vim/.vim/pack/git-plugins/start/vim-go"]
+	path = vim/.vim/pack/git-plugins/start/vim-go
+	url = https://github.com/fatih/vim-go.git
