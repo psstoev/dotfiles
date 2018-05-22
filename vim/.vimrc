@@ -5,6 +5,9 @@ call pathogen#infect()
 filetype on
 filetype plugin indent on
 syntax enable
+
+colorscheme monokai
+
 set number
 set history=100
 " Copy/Paste to/From X clipboard:
@@ -24,6 +27,7 @@ nnoremap <Tab> :bn<CR>
 nnoremap <S-Tab> :bp<CR>
 nnoremap <Leader><Tab> :bp\|bd #<CR>
 nmap <Leader>l :set list!<CR>
+nmap <C-p> :FZF<CR>
 
 " Default indentation settings:
 set ts=2 sts=2 sw=2 et
@@ -88,3 +92,11 @@ function SetLocalOptions(fname)
 endfunction
 
 au BufNewFile,BufRead * call SetLocalOptions(bufname("%"))
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+set t_8f=^[[38;2;%lu;%lu;%lum        " set foreground color
+set t_8b=^[[48;2;%lu;%lu;%lum        " set background color
+set t_Co=256                         " Enable 256 colors
+
+set rtp+=~/.fzf

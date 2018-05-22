@@ -3,7 +3,7 @@ set guioptions-=T
 " Disable right scrollbar:
 set guioptions-=r
 set cursorline
-set guifont=Ubuntu\ Mono\ 12
+" set guifont=Ubuntu\ Mono\ 12
 
 " Custom mappings:
 map <M-1> 1gt
