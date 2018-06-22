@@ -21,3 +21,5 @@
 
 [merge]
 	tool = vimdiff
+[core]
+	editor = vim
