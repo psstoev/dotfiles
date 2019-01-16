@@ -1,3 +1,5 @@
+[core]
+  editor = vim
 [user]
 	name = Plamen Stoev
 	email = psstoev@gmail.com
@@ -9,15 +11,25 @@
 	ui = auto
 
 [alias]
+	amend = commit --amend --no-edit
+  ba = branch -a
+  bd = branch -d
+  bD = branch -D
+  bdm = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
 	ca = commit -a
 	ci = commit
 	co = checkout
+  cob = checkout -b
 	di = diff
 	dc = diff --cached
+  f = fetch -p
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	oneline = log --pretty=oneline
+  p = push
+  plog = log --graph --pretty='format:%C(red)%d%C(reset) %C(yellow)%h%C(reset) %ar %C(green)%aN%C(reset) %s'
 	pr = pull --rebase
 	st = status
-	oneline = log --pretty=oneline
-	amend = commit --amend --no-edit
+  tlog = log --stat --since='1 Day Ago' --graph --pretty=oneline --abbrev-commit --date=relative
 
 [merge]
 	tool = vimdiff
